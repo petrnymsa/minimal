@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'chroma_counter/views/pages/chroma_counter_page.dart';
+import 'chroma_counter_bloc/views/pages/chroma_counter_page_bloc.dart';
 import 'counter/views/pages/counter_page.dart';
 import 'todos/views/pages/todos_page.dart';
 import 'version/views/widgets/version_panel.dart';
@@ -76,6 +77,18 @@ class HomePage extends StatelessWidget {
                     );
                   },
                   child: const Text('Chroma Counter'),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    unawaited(
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (final context) => const ChromaCounterPageBloc(),
+                        ),
+                      ),
+                    );
+                  },
+                  child: const Text('Chroma Counter BLOC'),
                 ),
                 ElevatedButton(
                   onPressed: () {
